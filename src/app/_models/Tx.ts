@@ -23,6 +23,6 @@ const txSchema = new mongoose.Schema<TxSchema>(
   { id: false }
 );
 
-txSchema.index({ total: 1, total: -1, blockindex: 1, blockindex: -1 });
+txSchema.index({ total: 1, blockindex: 1});
 
 export default mongoose.model("Tx", txSchema);
