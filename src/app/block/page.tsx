@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-import { Transaction } from "@/_types";
 import { formatDate } from "@/_utils/date";
 
 import CopyToClipboardBtn from "@/_components/CopyToClipboardBtn";

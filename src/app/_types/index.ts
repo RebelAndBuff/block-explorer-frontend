@@ -62,16 +62,16 @@ export interface Vout {
   };
 }
 
-export interface Transaction {
-  txid: string;
-  hash: string;
-  version: number;
-  size: number;
-  vsize: number;
-  weight: number;
-  locktime: number;
-  lockheight: number;
-  vin: Vin[];
-  vout: Vout[];
-  hex: string;
-}
+// export interface Transaction {
+//   txid: string;
+//   hash: string;
+//   version: number;
+//   size: number;
+//   vsize: number;
+//   weight: number;
+//   locktime: number;
+//   lockheight: number;
+//   vin: Vin[];
+//   vout: Vout[];
+//   hex: string;
+// }
