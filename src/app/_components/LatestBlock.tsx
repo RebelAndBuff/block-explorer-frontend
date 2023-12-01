@@ -34,7 +34,7 @@ export default function LatestBlock({ block }: Props) {
         <div className="w-full flex items-center justify-between">
           <p>
             {block.coinsCreated.toFixed(2)} freicoins &#x2022;{" "}
-            {block.transactions} transactions
+            {block.transactions} transactions 
           </p>
         </div>
       </Link>
