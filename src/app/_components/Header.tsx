@@ -15,18 +15,6 @@ const navLinks = [
     href: "/about",
   },
   {
-    title: "Rich list",
-    href: "/",
-  },
-  {
-    title: "Markets",
-    href: "/",
-  },
-  {
-    title: "API",
-    href: "/",
-  },
-  {
     title: "FAQ",
     href: "/",
   },
@@ -36,7 +24,7 @@ export default function Header({}: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="mx-auto flex flex-col items-center md:p-4 md:flex-row md:justify-between lg:justify-normal lg:border-b">
+    <header className="mx-auto flex flex-col items-center md:p-4 md:flex-row md:justify-between lg:justify-normal lg:border-b lg:border-slate-300">
       {/* Logo */}
       <Link className="hidden lg:flex lg:items-center lg:mr-12" href={"/"}>
         <img
@@ -97,12 +85,12 @@ export default function Header({}: Props) {
         </button>
 
         {/* Search input */}
-        <div className="relative w-full max-w-[25rem] flex items-center md:order-last rounded lg:w-2/4">
+        <div className="relative w-full max-w-[25rem] flex items-center md:mt-2 md:order-last rounded lg:w-2/4">
           <input
             type="search"
             aria-description="search for address, tx hash, block height..."
             placeholder="Search address, tx hash, block height ..."
-            className="absolute left-0 pl-2 pr-8 text-sm h-8 w-full rounded shadow-sm border"
+            className="absolute left-0 pl-2 pr-8 text-sm h-8 w-full rounded shadow-sm border border-slate-300"
           />
           <svg
             width="14"
@@ -134,7 +122,7 @@ export default function Header({}: Props) {
         className={
           isMenuOpen
             ? "w-full flex flex-col gap-2 items-center text-[0.90rem] text-slate-600 border-t md:border-b-2 md:flex-row"
-            : "hidden text-[0.95rem] md:flex md:items-center md:gap-4"
+            : "hidden text-[0.95rem] md:flex md:items-center md:gap-4 md:mt-2"
         }
       >
         {navLinks.map((link) => (
@@ -142,7 +130,7 @@ export default function Header({}: Props) {
             onClick={() => setIsMenuOpen(false)}
             key={link.title}
             href={link.href}
-            className="px-4 py-1 w-full border-b md:px-0 md:py-0 md:min-w-max md:border-none md:text-slate-400 md:font-medium"
+            className="px-4 py-1 w-full border-b md:px-0 md:py-0 md:min-w-max md:border-none md:text-slate-400 md:font-medium hover:text-slate-600 transition ease-in"
           >
             {link.title}
           </Link>

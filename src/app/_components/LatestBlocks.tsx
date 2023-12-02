@@ -88,7 +88,7 @@ export default function LatestBlocks() {
         onClick={fetchMore}
         type="button"
         title="show more blocks"
-        className="mt-4 w-full h-14 flex justify-center items-center gap-2 rounded border border-slate-500 shadow"
+        className="mt-4 w-full h-14 flex justify-center items-center gap-2 rounded border border-slate-500 shadow hover:bg-slate-200 transition ease-in-out duration-300"
       >
         <p className="text-center text-sm">
           {currentStep.amount === steps.last.amount ? (

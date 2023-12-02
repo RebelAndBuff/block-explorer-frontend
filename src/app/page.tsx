@@ -29,7 +29,7 @@ export default async function Home() {
         <button
           type="button"
           title="refresh stats"
-          className="px-8 py-1 rounded text-sm border"
+          className="px-8 py-1 rounded text-sm border border-slate-300"
         >
           Refresh
         </button>

@@ -2,8 +2,6 @@ import Link from "next/link";
 import { BlockHeader } from "@/_types";
 import { formatDate } from "@/_utils/date";
 
-import CopyToClipboardBtn from "./CopyToClipboardBtn";
-
 type Props = {
   block: BlockHeader;
 };
@@ -12,30 +10,27 @@ export default function LatestBlock({ block }: Props) {
   return (
     <li
       role="listitem"
-      className="relative p-2 w-full flex flex-col gap-y-1.5 text-xs rounded border shadow-sm lg:text-sm"
+      className="relative p-2 w-full flex flex-col gap-y-1.5 text-xs rounded border border-slate-300 shadow-sm lg:text-sm hover:border-slate-600 transition ease-in"
     >
-      <CopyToClipboardBtn content={block.hash} />
       <Link href={`/block?height=${block.height}`}>
         {/* top row */}
         <div className="w-full flex items-center justify-between">
           <div className="flex items-center gap-x-2">
-            <p>{`# ${block.height}`}</p>
-            <p className="flex items-center">
+            <p>{`#${block.height}`}</p>
+            <p className="px-1 flex items-center">
               ID:
-              <span className="ml-1 underline">
-                ...{block.hash.substring(56)}
-              </span>
+              <span className="ml-1">...{block.hash.substring(56)}</span>
             </p>
           </div>
-          <p>{formatDate(block.date)}</p>
         </div>
 
         {/* bottom row */}
         <div className="w-full flex items-center justify-between">
           <p>
             {block.coinsCreated.toFixed(2)} freicoins &#x2022;{" "}
-            {block.transactions} transactions 
+            {block.transactions} transactions
           </p>
+          <p className="text-slate-500">{formatDate(block.date)}</p>
         </div>
       </Link>
     </li>
